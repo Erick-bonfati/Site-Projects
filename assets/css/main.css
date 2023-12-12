@@ -1,0 +1,143 @@
+/*Estiliza por padrão tudo da página assim */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/*Estiliza o corpo da página */
+body {
+  min-height: 100vh; /*min-height: 100vh = centraliza o corpo no centro da página */
+  background: url(backmain.jpg) no-repeat; /* coloca uma imagem de fundo na tela e impede a repetição da imagem */
+  background-size: cover; /* faz a imagem cobrir completamente o elemento pai */
+  background-position: center; /* centraliza a imagem no elemento pai */
+}
+
+/*Estiliza o header = cabeçãlho da página */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+/*Estila a classe logo */
+.logo {
+  font-size: 3em;
+  color: #fff;
+  user-select: none;
+}
+
+/*Estiliza o 'a' da class navigation */
+.navigation a {
+  position: relative;
+  font-size: 1.3em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 40px;
+  transition: 1s ease;
+}
+
+.navigation a:hover {
+  font-size: 1.5em;
+}
+
+/* Utilizado para selecionar e estilizar o conteúdo que é gerado automaticamente e inserido após o conteúdo do elemento alvo */
+.navigation a::after {
+  /*content vazio pois vai ser o estilo aplicado com o after */
+  content: '';
+  /* é usada para posicionar um elemento de forma absoluta em relação ao seu contêiner pai mais próximo que possui uma posição diferente de (padrao) */
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  /* move o elemento 6 pixels para cima a partir do lado inferior do seu contêiner pai */
+  bottom: -6px;
+  height: 3px;
+  left: 0;
+  /* você está especificando que o elemento deve ser achatado horizontalmente até ficar invisível (largura zero). */
+  transform: scaleX(0);
+  /*modificação aplicada do lado direito do elemento*/
+  transform-origin: right;
+  /*indica que a propriedade transform tem uma duração de .5s, se o elemente tiver um 'hover' vai ser transmitido por meio segundo */
+  transition: transform .5s;
+}
+
+/*Aplica ao focar e depois de after no elemento navigation */
+.navigation a:hover::after {
+  /* 'transform-origin' =  aceita diferentes valores,  e "left" neste contexto indica que as transformações serão aplicadas em torno  do lado 
+      esquerdo do elemento. */
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-projects {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 80%;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, .5);
+  backdrop-filter: blur(20px);
+  background-color: transparent;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-projects a{
+  position: relative;
+  font-size: 1.3em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 80px;
+  transition: 1s ease;
+}
+
+.block-projects a:hover {
+  font-size: 1.5em;
+  color: rgb(21, 58, 12);
+  transition: .5;
+}
+
+/* Utilizado para selecionar e estilizar o conteúdo que é gerado automaticamente e inserido após o conteúdo do elemento alvo */
+.block-projects a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background: rgb(21, 58, 12);
+  border-radius: 5px;
+  bottom: -6px;
+  height: 3px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s;
+}
+
+/*Aplica ao focar e depois de after no elemento blockprojects*/
+.block-projects a:hover::after {
+  transform-origin: right;
+  transform: scaleX(1);
+}

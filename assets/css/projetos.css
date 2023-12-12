@@ -1,0 +1,145 @@
+/*Estiliza por padrão tudo da página assim */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/*Estiliza o corpo da página */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+  min-height: 100vh; /*min-height: 100vh = centraliza o corpo no centro da página */
+  background: url(backmain.jpg) no-repeat; /* coloca uma imagem de fundo na tela e impede a repetição da imagem */
+  background-size: cover; /* faz a imagem cobrir completamente o elemento pai */
+  background-position: center; /* centraliza a imagem no elemento pai */
+}
+
+
+/*Estiliza o header = cabeçãlho da página */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+/*Estila a classe logo */
+.logo {
+  font-size: 3em;
+  color: #fff;
+  user-select: none;
+  transition: 1s;
+}
+
+.logo:hover {
+  font-size: 3.3em;
+  color: rgb(148, 225, 129);
+}
+
+/*Estiliza o 'a' da class navigation */
+.navigation a {
+  position: relative;
+  font-size: 1.3em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 40px;
+  transition: 1s ease;
+}
+
+.navigation a:hover {
+  font-size: 1.5em;
+}
+
+/* Utilizado para selecionar e estilizar o conteúdo que é gerado automaticamente e inserido após o conteúdo do elemento alvo */
+.navigation a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  bottom: -6px;
+  height: 3px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s;
+}
+
+/*Aplica ao focar e depois de after no elemento navigation */
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.block {
+  height: 100px;
+  width: 1000px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  border: 2px solid rgba(95, 92, 92, 0.5);
+  backdrop-filter: blur(10px);
+  background-color: transparent;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block a{
+  position: relative;
+  font-size: 1.8em;
+  color: #162938;;
+  text-decoration: none;
+  font-weight: 1000;
+  margin: 80px;
+  transition: 1s ease;
+}
+
+.block a:hover {
+  color: #162938;
+  font-size: 2em;
+  font-weight: 1200;
+  transition: 1s;
+}
+
+/* Utilizado para selecionar e estilizar o conteúdo que é gerado automaticamente e inserido após o conteúdo do elemento alvo */
+.block a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background: rgb(21, 58, 12);
+  border-radius: 5px;
+  bottom: -6px;
+  height: 3px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s;
+}
+
+/*Aplica ao focar e depois de after no elemento blockprojects*/
+.block a:hover::after {
+  transform-origin: right;
+  transform: scaleX(1);
+}
+
+@media only screen and (max-width: 768px) {
+header {
+padding: 20px 20px;
+  }
+}
+.navigation a {
+margin-left: 20px;
+}
+

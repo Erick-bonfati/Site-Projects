@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+    <!--HEADER = Para criar um cabeçalho na sua página-->
+    <header>
+        <!--H2 - Para criar um subtitulo no meu cabeçalho-->
+        <h2 class="logo">Calculo de IMC</h2>
+
+        <!--nav = elemento que representa uma seção de uma pagina que aponta para outras páginas ou outras areas da página-->
+        <nav class="navigation">
+            <!--<a> = é usada para vincular uma página a outra, utilizando o atributo "href".-->
+            <a href="main.html">Home</a>
+            <a href="desPessoal.html">About me</a>
+            <a href="projetos.html">Projects</a>
+        </nav>
+    </header>
+
+    <!--Div para criar um bloco com os projetos a partir de qual projeto você clicar-->
+    <div class="block-projects">
+        <a href="calculoImc.html">Calculo de IMC</a>
+        <a href="listaTarefa.html">Lista de Tarefas</a>
+        <a href="timer.html">Timer</a>
+        <a href="validaCpf.html">Valida CPF</a>
+        <a href="login.html">Login</a>
+    </div>
+
+
+    <section class="container">
+        <label>Digite seu Peso:</label>
+        <input type="text">
+        <label>Digite sua Idade:</label>
+        <input type="text">
+
+        <button class="btn"></button>
+    </section>
+
+    <div class="resultado-imc"></div>
+    <script src="./assets/js/calculoImc.js"></script>
+</body>
+
+</html>
